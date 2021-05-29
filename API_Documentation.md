@@ -12,6 +12,7 @@ This document contains the RESTful APIs for the agent management system
 ## Authentication
 * To access SendGrid email service, you will need create an API key using following link - https://app.sendgrid.com/settings/api_keys. Once the API key is created, copy and paste it into 'sendgrid.env' file. After that, run 'export SENDGRID_API_KEY='YOUR_API_Key' in your terminal before running the server. For more detail, please go to https://app.sendgrid.com/guide/integrate/langs/nodejs.
 
+---
 
 ### 1. READ
 
@@ -200,5 +201,3 @@ curl -L -X DELETE "https://antai-ams.herokuapp.com/api/agents/8"
 
 **Response status code:**
 * 200 -- success
-
----

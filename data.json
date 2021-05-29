@@ -1,0 +1,42 @@
+[
+    {
+        "username": "Peter", 
+        "email": "peter@agent.com", 
+        "memberId": 1
+    },
+    {
+        "username": "Chris", 
+        "email": "chris@agent.com", 
+        "memberId": 2
+    },
+    {
+        "username": "Seth", 
+        "email": "seth@agent.com", 
+        "memberId": 3
+    },
+    {
+        "username": "Tony", 
+        "email": "tony@agent.com", 
+        "memberId": 4
+    },
+    {
+        "username": "Alex", 
+        "email": "alex@agent.com", 
+        "memberId": 5
+    },
+    {
+        "username": "Dave", 
+        "email": "dave@agent.com", 
+        "memberId": 6
+    },
+    {
+        "username": "David", 
+        "email": "david@agent.com", 
+        "memberId": 7
+    },
+    {
+        "username": "Tommy", 
+        "email": "tommy@agent.com", 
+        "memberId": 8
+    }
+]

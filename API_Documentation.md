@@ -9,13 +9,14 @@ This document contains the RESTful APIs for the agent management system
 * It supports searching by username and memberId
 * It integrates a free email api of SendGrid. Once new agent is registered successfully, it will automatically send a welcome email
 
+### 1. READ
+
 ## Authentication
 * To access SendGrid email service, you will need create an API key using following link - https://app.sendgrid.com/settings/api_keys. Once the API key is created, copy and paste it into 'sendgrid.env' file. After that, run 'export SENDGRID_API_KEY='YOUR_API_Key' in your terminal before running the server. For more detail, please go to https://app.sendgrid.com/guide/integrate/langs/nodejs.
 
 
-### GET
-#### **API:** GET /
 ---
+#### **API:** GET /
 
 Get the homepage.
 
@@ -33,9 +34,8 @@ curl -L -X GET "https://antai-ams.herokuapp.com/"
 * 200 -- success
 
 
-
-#### **API:** GET /api/agents
 ---
+#### **API:** GET /api/agents
 
 Get all agents' information.
 
@@ -53,9 +53,8 @@ curl -L -X GET "https://antai-ams.herokuapp.com/api/agents"
 * 200 -- success
 
 
-
-#### **API:** GET /api/agents/page
 ---
+#### **API:** GET /api/agents/page
 
 Get a list of agents with pagination. You can indicate how many agents per page and the page number you want to access by changing the value of the parameters, limit and page, in query.
 
@@ -76,9 +75,8 @@ curl -L -X GET "https://antai-ams.herokuapp.com/api/agents/page?limit=3&page=1"
 * 200 -- success
 
 
-
-#### **API:** GET /api/agents/id/:memberId
 ---
+#### **API:** GET /api/agents/id/:memberId
 
 Search and get the information of a specific agent using memberId. You can indicate which agent you want to access by changing the value of ':memberId'.
 
@@ -98,9 +96,8 @@ curl -L -X GET "https://antai-ams.herokuapp.com/api/agents/id/1"
 * 200 -- success
 
 
-
-#### **API:** GET /api/agents/username/:username
 ---
+#### **API:** GET /api/agents/username/:username
 
 Search and get the information of a specific agent using username. You can indicate which agent you want to access by changing the value of ':username'.
 
@@ -120,9 +117,9 @@ curl -L -X GET "https://antai-ams.herokuapp.com/api/agents/username/Tony"
 * 200 -- success
 
 
+### 2. CREATE
 
 #### **API:** POST /api/agents
----
 
 Create an agent by providing a username and email address.
 
@@ -150,9 +147,9 @@ curl -L -X POST "https://antai-ams.herokuapp.com/api/agents" \
 * 200 -- success
 
 
+### 3. Update
 
 #### **API:** PUT /api/agents/:memberId
----
 
 Update an agent's information(username & email) using memberId. You can indicate which agent you want to update by changing the value of ':memberId'.
 
@@ -177,9 +174,9 @@ curl -L -X PUT "https://antai-ams.herokuapp.com/api/agents/1" \
 * 200 -- success
 
 
+### 4. DELETE
 
 #### **API:** DELETE /api/agents/:memberId
----
 
 Delete an agent using memberId. You can indicate which agent you want to delete by changing the value of ':memberId'.
 

@@ -164,6 +164,15 @@ Update an agent's information(username & email) using memberId. You can indicate
 | ---- | ---- | ---------------- |
 | memberId | int | It should be a numeric digit of an existed agent's memberId |
 
+**Parameters:**
+
+body:
+
+| name | type | description |
+| ---- | ---- | ---------------- |
+| username | string | the username you want to change to. |
+| email | string | the email you want to change to. |
+
 **cURL Example:**
 ```
 curl -L -X PUT "https://antai-ams.herokuapp.com/api/agents/1" \

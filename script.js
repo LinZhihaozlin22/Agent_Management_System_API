@@ -28,7 +28,7 @@ app.get('/api/agents/page', (req, res)=> {
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
     const resultAgent = agents.slice(startIndex, endIndex);
-    
+
     res.json(resultAgent);
 });
 

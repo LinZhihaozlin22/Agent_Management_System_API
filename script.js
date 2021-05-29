@@ -10,6 +10,11 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 //import data sample from 'data.json' file
 const agents = require("./data.json");
 
+//READ homepage
+app.get('/', (req, res)=> {
+    res.send('Welcome to Agent Management System created by Zhihao Lin');
+});
+
 //READ all agents info
 app.get('/api/agents', (req, res)=> {
     res.send(agents);

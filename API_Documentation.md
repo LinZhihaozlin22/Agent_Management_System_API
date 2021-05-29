@@ -7,7 +7,7 @@ This document contains the RESTful APIs for the agent management system
 * It supports CRUD
 * It supports pagination. When read items with pagination, please pass two parameters: limit and page
 * It supports searching by username and memberId
-* It integrates a free email api of SendGrid. Once new agent is registered successfully, it will automatically send a welcome email
+* It integrates free email api of SendGrid. Once new agent is registered successfully, it will automatically send a welcome email
 
 ## Authentication
 * To access SendGrid email service, you will need create an API key using following link - https://app.sendgrid.com/settings/api_keys. Once the API key is created, copy and paste it into 'sendgrid.env' file. For more detail, please go to https://app.sendgrid.com/guide/integrate/langs/nodejs.
@@ -125,7 +125,7 @@ curl -L -X GET "https://antai-ams.herokuapp.com/api/agents/username/Tony"
 ---
 #### **API:** POST /api/agents
 
-Create an agent by providing a username and email address.
+Create an agent by providing a username and email address. It integrates the SendGrid email API.
 
 **Parameters:**
 

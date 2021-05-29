@@ -15,6 +15,7 @@ This document contains the RESTful APIs for the agent management system
 
 ### 1. READ
 
+---
 #### **API:** GET /
 
 Get the homepage.
@@ -115,9 +116,11 @@ curl -L -X GET "https://antai-ams.herokuapp.com/api/agents/username/Tony"
 **Response status code:**
 * 200 -- success
 
+---
 
 ### 2. CREATE
 
+---
 #### **API:** POST /api/agents
 
 Create an agent by providing a username and email address.
@@ -145,9 +148,11 @@ curl -L -X POST "https://antai-ams.herokuapp.com/api/agents" \
 **Response status code:**
 * 200 -- success
 
+---
 
 ### 3. Update
 
+---
 #### **API:** PUT /api/agents/:memberId
 
 Update an agent's information(username & email) using memberId. You can indicate which agent you want to update by changing the value of ':memberId'.
@@ -172,9 +177,11 @@ curl -L -X PUT "https://antai-ams.herokuapp.com/api/agents/1" \
 **Response status code:**
 * 200 -- success
 
+---
 
 ### 4. DELETE
 
+---
 #### **API:** DELETE /api/agents/:memberId
 
 Delete an agent using memberId. You can indicate which agent you want to delete by changing the value of ':memberId'.
@@ -193,3 +200,5 @@ curl -L -X DELETE "https://antai-ams.herokuapp.com/api/agents/8"
 
 **Response status code:**
 * 200 -- success
+
+---

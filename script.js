@@ -3,7 +3,7 @@ const Joi = require('joi');
 const app = express();
 app.use(express.json());
 
-//require SendGrid/mail
+//require SendGrid/mail service and setup API_key
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 

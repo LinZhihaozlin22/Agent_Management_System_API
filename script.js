@@ -27,22 +27,28 @@ app.get('/api/agents/page', (req, res)=> {
 
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
-
     const resultAgent = agents.slice(startIndex, endIndex);
+    
     res.json(resultAgent);
 });
 
 //Searching by memberId
 app.get('/api/agents/id/:memberId', (req, res) => {
     const agent = agents.find(c => c.memberId === parseInt(req.params.memberId));
-    if(!agent) res.status(404).send('<h2 style="font-family: Malgun Gothic; color: darkred;">Ooops... Cannot find the agent with this memberId</h2>');
+    if(!agent){
+        res.status(404).send('<h2 style="font-family: Malgun Gothic; color: darkred;">Ooops... Cannot find the agent with this memberId</h2>');
+        return;
+    }
     res.send(agent);
 });
 
 //Searching by username
 app.get('/api/agents/username/:username', (req, res) => {
     const agent = agents.find(c => c.username === req.params.username);
-    if(!agent) res.status(404).send('<h2 style="font-family: Malgun Gothic; color: darkred;">Ooops... Cannot find the agent with this username</h2>');
+    if(!agent){
+        res.status(404).send('<h2 style="font-family: Malgun Gothic; color: darkred;">Ooops... Cannot find the agent with this username</h2>');
+        return;
+    }
     res.send(agent);
 });
 
@@ -53,12 +59,13 @@ app.post('/api/agents', (req, res) => {
         res.status(400).send(error.detail[0].message)
         return;
     }
+
     const agent = {
         username: req.body.username,
         email: req.body.email,
         memberId: agents.length + 1
     };
-    agents.push(agent);
+    agents.push(agent); //store agent info
 
     //email content setup
     const msg = {
@@ -88,8 +95,11 @@ app.post('/api/agents', (req, res) => {
 //UPDATE agent using memberId
 app.put('/api/agents/:memberId', (req, res) => {
     const agent = agents.find(c => c.memberId === parseInt(req.params.memberId));
-    if(!agent) res.status(404).send('<h2 style="font-family: Malgun Gothic; color: darkred;">Agent Not Found</h2>');
-    
+    if(!agent){
+        res.status(404).send('<h2 style="font-family: Malgun Gothic; color: darkred;">Agent Not Found</h2>');
+        return;
+    }
+
     const { error } = validateAgent(req.body);
     if(error) {
         res.status(400).send(error.detail[0].message)
@@ -104,11 +114,13 @@ app.put('/api/agents/:memberId', (req, res) => {
 //DELETE agent using memberID
 app.delete('/api/agents/:memberId', (req, res) => {
     const agent = agents.find(c => c.memberId === parseInt(req.params.memberId));
-    if(!agent) res.status(404).send('<h2 style="font-family: Malgun Gothic; color: darkred;">Agent Not Found</h2>');
+    if(!agent){
+        res.status(404).send('<h2 style="font-family: Malgun Gothic; color: darkred;">Agent Not Found</h2>');
+        return;
+    }
     
     const index = agents.indexOf(agent);
     agents.splice(index,1);
-
     res.send(agent);
 });
 

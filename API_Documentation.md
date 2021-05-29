@@ -9,13 +9,12 @@ This document contains the RESTful APIs for the agent management system
 * It supports searching by username and memberId
 * It integrates a free email api of SendGrid. Once new agent is registered successfully, it will automatically send a welcome email
 
-### 1. READ
-
 ## Authentication
 * To access SendGrid email service, you will need create an API key using following link - https://app.sendgrid.com/settings/api_keys. Once the API key is created, copy and paste it into 'sendgrid.env' file. After that, run 'export SENDGRID_API_KEY='YOUR_API_Key' in your terminal before running the server. For more detail, please go to https://app.sendgrid.com/guide/integrate/langs/nodejs.
 
 
----
+### 1. READ
+
 #### **API:** GET /
 
 Get the homepage.

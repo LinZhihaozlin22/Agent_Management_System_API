@@ -71,12 +71,12 @@ app.post('/api/agents', (req, res) => {
     const msg = {
         to: agent.email,
         from: 'zhihaolinsde@gmail.com', // Change to your verified sender
-        subject: 'Hello from Antai Global Inc.',
+        subject: 'Hello from Agent Management System created by Zhihao Lin',
         text: `Dear ${agent.username}, \n
         Thank you for your registration. Your member id is ${agent.memberId}.
         Hope you enjoy our web services!\n
         Best,
-        Antai Global Inc.`,
+        Zhihao Lin`,
         html: agent.body,
       }
     //sending email
